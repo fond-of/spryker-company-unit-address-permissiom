@@ -1,6 +1,5 @@
 <?php
 
-
 namespace FondOfSpryker\Client\CompanyUnitAddressPermission\Plugin;
 
 use FondOfSpryker\Shared\CompanyUnitAddressPermission\CompanyUnitAddressPermissionConfig;
@@ -26,14 +25,14 @@ class WriteCompanyUnitAddressPermissionPlugin extends AbstractPlugin implements 
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
+     *
+     * @api
      *
      * @param array $configuration
      * @param int|string|array|null $context
      *
      * @return bool
-     * @api
-     *
      */
     public function can(array $configuration, $context = null): bool
     {
@@ -41,7 +40,8 @@ class WriteCompanyUnitAddressPermissionPlugin extends AbstractPlugin implements 
             return false;
         }
 
-        if (!array_key_exists(static::CONFIG_COMPANY_IDS, $configuration)
+        if (
+            !array_key_exists(static::CONFIG_COMPANY_IDS, $configuration)
             || !is_array($configuration[static::CONFIG_COMPANY_IDS])
         ) {
             return false;
@@ -51,11 +51,11 @@ class WriteCompanyUnitAddressPermissionPlugin extends AbstractPlugin implements 
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
-     * @return array
      * @api
      *
+     * @return array
      */
     public function getConfigurationSignature(): array
     {

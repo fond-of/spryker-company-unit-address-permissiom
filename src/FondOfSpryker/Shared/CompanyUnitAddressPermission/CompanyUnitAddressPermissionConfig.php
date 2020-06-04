@@ -1,6 +1,5 @@
 <?php
 
-
 namespace FondOfSpryker\Shared\CompanyUnitAddressPermission;
 
 use Spryker\Shared\Kernel\AbstractBundleConfig;
